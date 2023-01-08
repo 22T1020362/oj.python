@@ -1,0 +1,14 @@
+import sys 
+
+try :
+    sys.stdin = open("input.inp", "r")
+except :
+    sys.stdin = sys.__stdin__
+
+n = int(input())
+ans = 1
+while (n > 0) :
+    ans *= n
+    n -= 1
+
+print(len(str(ans)))

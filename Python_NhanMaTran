@@ -1,0 +1,20 @@
+m, n, p = map(int, input().split())
+
+a = []
+
+for i in range(0, m, 1) :
+    a.append([])
+    a[i] = list(map(int, input().split()))
+    
+b = []
+for i in range(0, n, 1) :
+    b.append([])
+    b[i] = list(map(int, input().split()))
+    
+for i in range(0, m, 1) :
+    for j in range(0, p, 1) :
+        sum = 0
+        for k in range(0, n, 1) :
+            sum += a[i][k] * b[k][j]
+        print(sum, end = ' ')
+    print()

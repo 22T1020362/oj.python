@@ -1,20 +1,21 @@
-m, n, p = map(int, input().split())
 
+# import sys
+# sys.stdin = open('DSHP.csv', 'r')
+# sys.stdout = open('HocPhanTIN.out', 'w')
+import math
 a = []
-
-for i in range(0, m, 1) :
-    a.append([])
-    a[i] = list(map(int, input().split()))
-    
 b = []
-for i in range(0, n, 1) :
-    b.append([])
-    b[i] = list(map(int, input().split()))
-    
-for i in range(0, m, 1) :
-    for j in range(0, p, 1) :
-        sum = 0
-        for k in range(0, n, 1) :
-            sum += a[i][k] * b[k][j]
-        print(sum, end = ' ')
-    print()
+m,n,p  = map(int,input().split())
+for i in range(m):
+    x = list(map(int,input().split()))
+    a.append(x)
+for i in range(n):
+    y = list(map(int,input().split()))
+    b.append(y)
+c = [[0 for i in range(p)] for j in range(m)]
+for i in range(m):
+    for j in range(p):
+        for k in range(n):
+            c[i][j] += (a[i][k] * b[k][j] )
+for i in range(m):
+    print(*c[i])
